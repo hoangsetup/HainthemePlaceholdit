@@ -32,7 +32,7 @@ namespace HainthemePlaceholdit
 
         private void button_start_Click(object sender, EventArgs e)
         {
-            
+
             foreach (MyImageFile imageFile in _images)
             {
                 var file = imageFile;
@@ -40,11 +40,18 @@ namespace HainthemePlaceholdit
                 ThreadPool.QueueUserWorkItem(o =>
                 {
                     string path = _parentPath + "_placeholdit";
-                    if (!Directory.Exists(path))
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-                    PlaceholditHelper.DownloadImage(path, file);
+                    //if (!Directory.Exists(path))
+                    //{
+                    //    Directory.CreateDirectory(path);
+                    //}
+
+                    CopyDirectory(_parentPath, path);
+
+                    string parentFolderOld = _parentPath.Split('\\')[_parentPath.Split('\\').Length - 1];
+                    string newFolder = Path.GetDirectoryName(file.Path).Replace(parentFolderOld, parentFolderOld + "_placeholdit");
+
+                    PlaceholditHelper.DownloadImage(newFolder, file);
+
                     Invoke((MethodInvoker)(() =>
                     {
                         lock (label_status)
@@ -103,7 +110,7 @@ namespace HainthemePlaceholdit
             {
                 return;
             }
-            if (!Directory.Exists(_parentPath) )
+            if (!Directory.Exists(_parentPath))
             {
                 MessageBox.Show(@"Path invalid");
                 dataGridView_images.DataSource = null;
@@ -122,6 +129,26 @@ namespace HainthemePlaceholdit
             }
             label_status.Text = @"0/" + _images.Count;
             dataGridView_images.DataSource = _images;
+        }
+
+        private static void CopyDirectory(string sourcePath, string destPath)
+        {
+            if (!Directory.Exists(destPath))
+            {
+                Directory.CreateDirectory(destPath);
+            }
+
+            /*            foreach (string file in Directory.GetFiles(sourcePath))
+                        {
+                            string dest = Path.Combine(destPath, Path.GetFileName(file));
+                            File.Copy(file, dest);
+                        }*/
+
+            foreach (string folder in Directory.GetDirectories(sourcePath))
+            {
+                string dest = Path.Combine(destPath, Path.GetFileName(folder));
+                CopyDirectory(folder, dest);
+            }
         }
 
     }

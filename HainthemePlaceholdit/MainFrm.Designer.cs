@@ -60,6 +60,7 @@
             // 
             // button_pickfoder
             // 
+            this.button_pickfoder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_pickfoder.Location = new System.Drawing.Point(390, 17);
             this.button_pickfoder.Margin = new System.Windows.Forms.Padding(4);
             this.button_pickfoder.Name = "button_pickfoder";
@@ -71,6 +72,8 @@
             // 
             // textBox_path
             // 
+            this.textBox_path.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_path.Location = new System.Drawing.Point(12, 20);
             this.textBox_path.Name = "textBox_path";
             this.textBox_path.Size = new System.Drawing.Size(371, 23);
@@ -79,10 +82,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.toolStrip_option);
             this.groupBox1.Location = new System.Drawing.Point(13, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(476, 60);
+            this.groupBox1.Size = new System.Drawing.Size(476, 67);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Option";
@@ -178,6 +184,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.button_start);
             this.groupBox2.Controls.Add(this.label_status);
             this.groupBox2.Controls.Add(this.progressBar_status);
@@ -185,16 +194,17 @@
             this.groupBox2.Controls.Add(this.dataGridView_images);
             this.groupBox2.Location = new System.Drawing.Point(16, 117);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(470, 260);
+            this.groupBox2.Size = new System.Drawing.Size(470, 267);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DoInBackground";
             // 
             // button_start
             // 
-            this.button_start.Location = new System.Drawing.Point(374, 56);
+            this.button_start.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_start.Location = new System.Drawing.Point(324, 56);
             this.button_start.Name = "button_start";
-            this.button_start.Size = new System.Drawing.Size(90, 32);
+            this.button_start.Size = new System.Drawing.Size(125, 32);
             this.button_start.TabIndex = 4;
             this.button_start.Text = "Start";
             this.button_start.UseVisualStyleBackColor = true;
@@ -211,9 +221,11 @@
             // 
             // progressBar_status
             // 
+            this.progressBar_status.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar_status.Location = new System.Drawing.Point(61, 27);
             this.progressBar_status.Name = "progressBar_status";
-            this.progressBar_status.Size = new System.Drawing.Size(403, 23);
+            this.progressBar_status.Size = new System.Drawing.Size(388, 23);
             this.progressBar_status.TabIndex = 2;
             // 
             // label1
@@ -229,6 +241,9 @@
             // 
             this.dataGridView_images.AllowUserToAddRows = false;
             this.dataGridView_images.AllowUserToDeleteRows = false;
+            this.dataGridView_images.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_images.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_images.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_images.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -238,12 +253,12 @@
             this.dataGridView_images.Name = "dataGridView_images";
             this.dataGridView_images.ReadOnly = true;
             this.dataGridView_images.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_images.Size = new System.Drawing.Size(458, 159);
+            this.dataGridView_images.Size = new System.Drawing.Size(443, 157);
             this.dataGridView_images.TabIndex = 0;
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "Name";
+            this.Column1.DataPropertyName = "Path";
             this.Column1.FillWeight = 120F;
             this.Column1.HeaderText = "Name";
             this.Column1.Name = "Column1";
@@ -261,7 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 389);
+            this.ClientSize = new System.Drawing.Size(501, 396);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox_path);
@@ -269,10 +284,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(511, 422);
             this.MinimumSize = new System.Drawing.Size(511, 422);
             this.Name = "MainFrm";
-            this.Text = "Haintheme Placeholdit tool";
+            this.Text = "Haintheme Placeholdit tool v2.0";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.toolStrip_option.ResumeLayout(false);
