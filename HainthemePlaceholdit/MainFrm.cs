@@ -32,7 +32,7 @@ namespace HainthemePlaceholdit
 
         private void button_start_Click(object sender, EventArgs e)
         {
-
+            progressBar_status.Maximum = _images.Count;
             foreach (MyImageFile imageFile in _images)
             {
                 var file = imageFile;
@@ -60,7 +60,7 @@ namespace HainthemePlaceholdit
                             label_status.Text = _count + @"/" + _images.Count;
                             lock (progressBar_status)
                             {
-                                int process = (_count / _images.Count) * 100;
+                                int process = _count;
                                 progressBar_status.Value = process;
                                 if (_count == _images.Count)
                                 {
@@ -149,6 +149,24 @@ namespace HainthemePlaceholdit
                 string dest = Path.Combine(destPath, Path.GetFileName(folder));
                 CopyDirectory(folder, dest);
             }
+        }
+
+        private void MainFrm_Load(object sender, EventArgs e)
+        {
+            // Create the ToolTip and associate with the Form container.
+            ToolTip toolTip1 = new ToolTip();
+
+            // Set up the delays for the ToolTip.
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 500;
+            toolTip1.ReshowDelay = 500;
+            // Force the ToolTip text to be displayed whether or not the form is active.
+            toolTip1.ShowAlways = true;
+
+            // Set up the ToolTip text for the Button and Checkbox.
+            toolTip1.SetToolTip(button_pickfoder, "Pick folder");
+            toolTip1.SetToolTip(button_start, "Start process");
+            toolTip1.SetToolTip(textBox_path, "Path folder images");
         }
 
     }

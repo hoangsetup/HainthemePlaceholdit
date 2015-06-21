@@ -131,6 +131,7 @@
             this.themeColorPickerToolStripSplitButton_bgcolor.Name = "themeColorPickerToolStripSplitButton_bgcolor";
             this.themeColorPickerToolStripSplitButton_bgcolor.Size = new System.Drawing.Size(48, 22);
             this.themeColorPickerToolStripSplitButton_bgcolor.Text = "themeColorPickerToolStripSplitButton1";
+            this.themeColorPickerToolStripSplitButton_bgcolor.ToolTipText = "Background color";
             // 
             // toolStripSeparator1
             // 
@@ -160,6 +161,7 @@
             this.themeColorPickerToolStripSplitButton_txtcolor.Name = "themeColorPickerToolStripSplitButton_txtcolor";
             this.themeColorPickerToolStripSplitButton_txtcolor.Size = new System.Drawing.Size(48, 22);
             this.themeColorPickerToolStripSplitButton_txtcolor.Text = "themeColorPickerToolStripSplitButton2";
+            this.themeColorPickerToolStripSplitButton_txtcolor.ToolTipText = "Text color";
             // 
             // toolStripSeparator3
             // 
@@ -180,7 +182,8 @@
             // toolStripTextBox_text
             // 
             this.toolStripTextBox_text.Name = "toolStripTextBox_text";
-            this.toolStripTextBox_text.Size = new System.Drawing.Size(200, 25);
+            this.toolStripTextBox_text.Size = new System.Drawing.Size(200, 23);
+            this.toolStripTextBox_text.ToolTipText = "Text in image";
             // 
             // groupBox2
             // 
@@ -259,7 +262,7 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "Path";
-            this.Column1.FillWeight = 120F;
+            this.Column1.FillWeight = 140F;
             this.Column1.HeaderText = "Name";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -267,7 +270,7 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "Size";
-            this.Column2.FillWeight = 80F;
+            this.Column2.FillWeight = 60F;
             this.Column2.HeaderText = "Size";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -287,6 +290,7 @@
             this.MinimumSize = new System.Drawing.Size(511, 422);
             this.Name = "MainFrm";
             this.Text = "Haintheme Placeholdit tool v2.0";
+            this.Load += new System.EventHandler(this.MainFrm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.toolStrip_option.ResumeLayout(false);
